@@ -7,36 +7,19 @@ Instagram authicentation module
 Gradle Way:
 This way is the recommended by me. Too easy and comfortable.
 1-) In the gradle(Project level) there is a code snippet  like: 
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
 Then add "maven { url 'https://jitpack.io' }" line to en od repositories area. It should be like this:
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
+![maven](https://user-images.githubusercontent.com/36734013/64606855-e4b0e500-d3cf-11e9-8627-3622755b2689.png)
+
+
+
 
 2-) After adding maven repository then add a line to gradle(app level) dependencies. 
 implementation 'com.github.markiyurtdas:instagram-auth-module:1.0.1'
 
 It loke like this:
-dependencies {
-    ...
-    ...
-    ...
-    ...
-    
-    implementation 'com.github.markiyurtdas:instagram-auth-module:1.0.1'
-}
+
+![dependencies](https://user-images.githubusercontent.com/36734013/64606934-1b86fb00-d3d0-11e9-9014-6b6edc27e488.png)
 
 
 
