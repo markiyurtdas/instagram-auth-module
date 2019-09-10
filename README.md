@@ -5,6 +5,7 @@ Instagram authicentation module
 
 --------------------------GRADLE WAY----------------------------------------------------
 Gradle Way:
+
 This way is the recommended by me. Too easy and comfortable.
 1-) In the gradle(Project level) there is a code snippet  like: 
 Then add "maven { url 'https://jitpack.io' }" line to en od repositories area. It should be like this:
@@ -31,4 +32,4 @@ Module Way:
 For importing module to your project please follow this link: https://developer.android.com/studio/projects/add-app-module
 and select instaaccess module to import your project.
 
-2-) Then in Mainactivity.java file there will be sample code to get access token.
+2-) Then look at Mainactivity.java file there will be sample code to get access token.
