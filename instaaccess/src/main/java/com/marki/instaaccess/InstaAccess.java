@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,9 +32,14 @@ public class InstaAccess extends AppCompatActivity implements AuthenticationList
     }
 
     private void startInstaRequest(){
-        authenticationDialog = new AuthenticationDialog(this, this);
-        authenticationDialog.setCancelable(true);
-        authenticationDialog.show();
+        if (getResources().getString(R.string.client_id).compareTo("0")!=0){
+            authenticationDialog = new AuthenticationDialog(this, this);
+            authenticationDialog.setCancelable(true);
+            authenticationDialog.show();
+        }else {
+            Toast.makeText(this, "Error!!! When loading Instagram Login page \nPlease get a client-id from Instagram Developer site", Toast.LENGTH_LONG).show();
+        }
+
     }
     @Override
     public void onTokenReceived(String auth_token) {
