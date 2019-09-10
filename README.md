@@ -23,6 +23,10 @@ It loke like this:
 ![dependencies](https://user-images.githubusercontent.com/36734013/64606934-1b86fb00-d3d0-11e9-9014-6b6edc27e488.png)
 
 
+3-) Finally call startActivityForResult(new ıntent(YourActivity.this,InstaAccess.class),YOUR_REQUEST_CODE)
+and override onActivityResult method like below:
+![onActivityResult](https://user-images.githubusercontent.com/36734013/64613023-d5d12f00-d3dd-11e9-8ad2-d2624effc544.png)
+
 
 
 --------------------------MODULE WAY----------------------------------------------------
