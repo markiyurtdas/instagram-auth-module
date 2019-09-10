@@ -25,7 +25,7 @@ It loke like this:
 
 3-) Finally call startActivityForResult(new ıntent(YourActivity.this,InstaAccess.class),YOUR_REQUEST_CODE)
 and override onActivityResult method like below:
-![onActivityResult](https://user-images.githubusercontent.com/36734013/64613023-d5d12f00-d3dd-11e9-8ad2-d2624effc544.png)
+![override](https://user-images.githubusercontent.com/36734013/64613509-f9e14000-d3de-11e9-81bb-411fc3a166ca.png)
 
 
 
