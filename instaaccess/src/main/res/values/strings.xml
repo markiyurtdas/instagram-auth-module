@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">InstaAccess</string>
+
+    <!-- TODO burdaki tokeni değiştir-->
+    <string name="client_id">6837c32a7a07487da049c0c1f9bce8f6</string>
+    <string name="access_token">10577943312.1677ed0.83f1d5e77ad6442580c71e46200f2673</string>
+    <string name="redirect_url">https://oceanwp.org/instagram/</string>
+    <string name="base_url">https://api.instagram.com/</string>
+    <string name="get_user_info_url">
+    https://api.instagram.com/v1/users/self/?access_token=
+    </string>
+    <string name="get_user_media_url">
+        https://api.instagram.com/v1/users/self/media/recent/?access_token=
+    </string>
+
+</resources>
