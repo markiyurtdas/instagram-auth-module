@@ -14,8 +14,16 @@ public class InstaUser {
     private String fullName;
     private ArrayList<String> instaPictures = new ArrayList<>();
 
+    public void setInstaPictures(ArrayList<String> instaPictures) {
+        this.instaPictures = instaPictures;
+    }
+
     public ArrayList<String> getInstaPictures() {
         return instaPictures;
+    }
+
+    public int count(){
+        return instaPictures.size();
     }
 
 

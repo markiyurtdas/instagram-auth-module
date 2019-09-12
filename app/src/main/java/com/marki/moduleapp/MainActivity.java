@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        instaUser = new InstaUser();
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     STORAGE_PERMISSION_CODE);
         }else {
             startActivityForResult(new Intent(MainActivity.this, InstaAccess.class),INSTA_REQUEST_CODE);
+
         }
 
 
@@ -58,16 +60,14 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 //token from InstaAccess class. You can get info from instagram with this token.
 
+                //Log.d("zxcInsta","insta aaccess :" + );
+
 
                 instaUser.setToken(data.getStringExtra("insta_token"));
                 instaUser.setInstaUsername(data.getStringExtra("insta_username"));
                 instaUser.setProfilPhotoUrl(data.getStringExtra("instta_profil_photo"));
                 instaUser.setFullName(data.getStringExtra("insta_full_name"));
-                String[] list = data.getStringArrayExtra("insta_picture_list");
-                for (int i = 0; i<list.length;i++){
-                    instaUser.addToList(list[i],list[i+1]);
-                    i++;
-                }
+                instaUser.setInstaPictures(data.getStringArrayListExtra("insta_picture_list"));
 
 
             }
@@ -75,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
                 //Show error Toast message if user canceled
                 Toast.makeText(this, "User Canceled", Toast.LENGTH_SHORT).show();
             }
+            String str="";
+            for (String link : instaUser.getInstaPictures()){
+                str += link+"\n";
+            }
+
+            //TODO remove tv(TextView)
+            TextView tv = findViewById(R.id.tv);
+            tv.setText("Links:\n" + str);
 
         }
     }

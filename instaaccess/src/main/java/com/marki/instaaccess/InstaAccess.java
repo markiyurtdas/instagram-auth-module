@@ -49,8 +49,6 @@ public class InstaAccess extends AppCompatActivity implements AuthenticationList
 
         setTitle("Instagram");
 
-        //TODO start http request
-
         startInstaRequest();
     }
 
@@ -68,8 +66,8 @@ public class InstaAccess extends AppCompatActivity implements AuthenticationList
     public void onTokenReceived(String auth_token) {
         Log.d("zxcLibraryInstaAccess", "onTokenReceived: " + auth_token);
         token = auth_token;
+        getUserInfoByAccessToken();
 
-        //proccessIsOK(auth_token);
     }
 
     private void proccessIsOK(String access_token){
@@ -133,15 +131,12 @@ public class InstaAccess extends AppCompatActivity implements AuthenticationList
                     Log.e("response", jsonObject.toString());
                     JSONObject jsonData = jsonObject.getJSONObject("data");
                     if (jsonData.has("id")) {
-                        //TODO Fill user information with data which is fetch from Instagram
-                        //filling User's info
+
                         user.setToken(jsonData.getString("id"));
                         user.setInstaUsername(jsonData.getString("username"));
                         user.setProfilPhotoUrl(jsonData.getString("profile_picture"));
                         user.setFullName(jsonData.getString("full_name"));
 
-                        //Go to other activity
-                        //startActivity(new Intent(InstaAccess.this, ProfileActivity.class));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -200,10 +195,6 @@ public class InstaAccess extends AppCompatActivity implements AuthenticationList
 
 
                         }//get images url
-
-                        //TODO Go to other activity
-//                        Toast.makeText(InstaAccess.this, "Go to Profile activity", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(InstaAccess.this, ProfileActivity.class));
                         proccessIsOK(token);
                     }
                 } catch (JSONException e) {
