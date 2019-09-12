@@ -2,7 +2,7 @@
     <string name="app_name">InstaAccess</string>
 
     <!-- TODO burdaki tokeni değiştir-->
-    <string name="client_id">6837c32a7a07487da049c0c1f9bce8f6</string>
+    <string name="client_id">YOUR_KEY</string>
     <string name="redirect_url">https://oceanwp.org/instagram/</string>
     <string name="base_url">https://api.instagram.com/</string>
     <string name="get_user_info_url">
