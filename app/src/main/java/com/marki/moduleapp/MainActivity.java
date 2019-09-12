@@ -15,12 +15,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.marki.instaaccess.InstaAccess;
+import com.marki.instaaccess.model.InstaUser;
 
 
 public class MainActivity extends AppCompatActivity {
     static private int INSTA_REQUEST_CODE=1001;
     static private int STORAGE_PERMISSION_CODE=1000;
-    static public int sayi =0;
+    InstaUser instaUser;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +57,19 @@ public class MainActivity extends AppCompatActivity {
             // check Result is OK or Canceled
             if (resultCode == RESULT_OK) {
                 //token from InstaAccess class. You can get info from instagram with this token.
-                String result = data.getStringExtra("insta_token");
-                Log.d("onActivityResult", "Token: "+result);
+
+
+                instaUser.setToken(data.getStringExtra("insta_token"));
+                instaUser.setInstaUsername(data.getStringExtra("insta_username"));
+                instaUser.setProfilPhotoUrl(data.getStringExtra("instta_profil_photo"));
+                instaUser.setFullName(data.getStringExtra("insta_full_name"));
+                String[] list = data.getStringArrayExtra("insta_picture_list");
+                for (int i = 0; i<list.length;i++){
+                    instaUser.addToList(list[i],list[i+1]);
+                    i++;
+                }
+
+
             }
             if (resultCode == RESULT_CANCELED) {
                 //Show error Toast message if user canceled

@@ -1,4 +1,4 @@
-package com.marki.instaaccess;
+package com.marki.instaaccess.util;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
+
+import com.marki.instaaccess.R;
 
 public class AuthenticationDialog extends Dialog {
     private final String request_url;

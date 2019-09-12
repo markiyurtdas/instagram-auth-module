@@ -1,4 +1,4 @@
-package com.marki.instaaccess;
+package com.marki.instaaccess.util;
 
 
 public interface AuthenticationListener {
